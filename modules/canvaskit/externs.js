@@ -35,6 +35,7 @@ var CanvasKit = {
   ImageData: function() {},
 
   GetWebGLContext: function() {},
+  DeleteWebGLContext: function() {},
   MakeBlurMaskFilter: function() {},
   MakeCanvas: function() {},
   MakeCanvasSurface: function() {},
