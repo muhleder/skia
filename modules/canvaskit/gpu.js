@@ -52,6 +52,12 @@
       };
 
       CanvasKit.DeleteWebGLContext = function(handle) {
+        var glCtxObject = GL.contexts[handle];
+        if (glCtxObject && glCtxObject.GLctx) {
+          var ctx = glCtxObject.GLctx;
+          var extension = ctx.getExtension('WEBGL_lose_context');
+          if (extension) extension.loseContext();
+        }
         GL.deleteContext(handle);
       }
 
